@@ -11,9 +11,16 @@ public class String01 {
 
         System.out.println(str + " " + t);
 
-        for(int i = 0; i < str.length(); i++) {
-            if(str.charAt(i) == t){
-//                charAt(i) : 인덱스로 접근
+        //1. 기본 for 방식
+//        for(int i = 0; i < str.length(); i++) {
+//            if(str.charAt(i) == t){
+////                charAt(i) : 인덱스로 접근
+//                answer++;
+//            }
+//        }
+        for(char x : str.toCharArray()){
+            //string 을 배열로 만들어주는거는 toCharArray() 입니다.
+            if( x == t){
                 answer++;
             }
         }
