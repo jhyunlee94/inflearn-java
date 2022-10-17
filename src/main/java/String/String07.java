@@ -14,16 +14,25 @@ public class String07 {
     public String solution(String str) {
         //input : gooG, gooa, stuts
         //output : YES, NO, YES
-        String answer = "YES";
-        str = str.toUpperCase();
-        int len = str.length();
+        String answer = "NO";
 
-        for(int i = 0; i < len/2; i++){
-            if(str.charAt(i) != str.charAt(len-i-1)){
-//                answer = "NO";
-                return "NO";
-            }
+        String temp = new StringBuilder(str).reverse().toString();
+        if(str.equalsIgnoreCase(temp)){
+            //equals는 대소문자를 구분함
+            //equalsIgnoreCase는 대소문자 무시함
+            answer = "YES";
         }
+
+//        String answer = "YES";
+//        str = str.toUpperCase();
+//        int len = str.length();
+//
+//        for(int i = 0; i < len/2; i++){
+//            if(str.charAt(i) != str.charAt(len-i-1)){
+////                answer = "NO";
+//                return "NO";
+//            }
+//        }
         return answer;
     }
 }
