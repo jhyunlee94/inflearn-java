@@ -1,7 +1,7 @@
 package String;
 
 import java.util.Scanner;
-
+//3. 문장 속 단어
 public class String03 {
     public String solution(String str) {
         String answer = "";
