@@ -1,33 +1,26 @@
 package review;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
+import java.util.*;
 
 public class Main {
-    public String solution(String str) {
+    public String solution(int n, String str) {
         String answer = "";
-        int cnt = 1;
-        str = str + ' ';
-        for (int i = 0; i < str.length() -1; i++){
-            if ( str.charAt(i) == str.charAt(i+1)){
-                cnt++;
-            } else {
-                answer += str.charAt(i);
-                if(cnt > 1) {
-                    answer += cnt;
-                    cnt = 1;
-                }
-            }
+        for (int i = 0; i < n; i++) {
+            String temp = str.substring(0, 7).replace("#", "1").replace("*","0");
+            int num = Integer.parseInt(temp, 2);
+            str = str.substring(7);
+            answer += (char)num;
         }
+
         return answer;
     }
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String str = br.readLine();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String str = sc.next();
         Main main = new Main();
-        System.out.println(main.solution(str));
-
+        System.out.println(main.solution(n, str));
     }
 }
